@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface d'Entrée</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: no-repeat center center fixed;
+            background-image: url('C:/Users/HPr/Desktop/PFE24V2/rabat-maroc.jpg.1920x0_q85.jpg');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .panel {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 50%;
+            max-width: 500px;
+            text-align: center;
+            z-index: 1;
+        }
+        
+        .panel h1 {
+            margin: 0 0 20px;
+            font-size: 2.5em;
+            color: #333;
+        }
+        
+        .panel button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        
+        .panel button:hover {
+            background: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .panel img {
+            height: 80px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <img src="file:///C:/Users/HPr/Desktop/PFE24V2/logo_redal2.jpg" alt="Logo Redal">
+        <h1>INTERFACE D'ENTRÉE</h1>
+        <button onclick="window.location.href='nouvelle_saisie.html';">Nouvelle Demande</button>
+        <button onclick="window.location.href='maj_consultation.html';">Mise à jour Consultation</button>
+        <button onclick="window.location.href='reporting_consultation.html';">Reporting Consultation</button>
+    </div>
+</body>
+</html>

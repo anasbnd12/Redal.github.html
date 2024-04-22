@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAJ Consultation - Redal</title>
+    <style>
+        body, html {
+            height: 185%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: no-repeat center center fixed;
+            background-image: url('C:/Users/HPr/Desktop/PFE24V2/rabat-maroc.jpg.1920x0_q85.jpg');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            width: 750px;
+            background-color: #fff;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .header {
+            background-color: #fff;
+            padding: 10px;
+            position: relative;
+        }
+        .header img {
+            height: 50px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .header-title {
+            color: #000;
+            font-size: 34px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .form-title-box {
+    background-color: #000000; 
+    color: #ffffff;
+    border: 1px solid #000;
+    text-align: left;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 200px; 
+    display: inline-block; /* Permet au bloc de s'aligner à gauche */
+}
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .form-column {
+            display: flex;
+            flex-direction: column;
+            width: 48%;
+        }
+        .form-column label {
+            margin-bottom: 5px;
+        }
+        .form-column input[type="text"],
+        .form-column input[type="date"],
+        .form-column select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .full-width {
+            width: 100%;
+        }
+        .btn-add {
+            background-color: #007bff;
+            color: white;
+            padding: 7px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-add:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function addEntrepriseConsultee() {
+            var container = document.getElementById('consulteesContainer');
+            var newDiv = document.createElement('div');
+            newDiv.innerHTML = `<input type="text" class="input full-width" placeholder="Nom de l'entreprise"><br/>`;
+            container.appendChild(newDiv);
+        }
+
+        function addEntrepriseRepondu() {
+            var container = document.getElementById('reponduContainer');
+            var newDiv = document.createElement('div');
+            newDiv.innerHTML = `
+                <input type="text" class="input full-width" placeholder="Nom de l'entreprise">
+                <input type="date" class="input full-width">
+                <select class="select full-width">
+                    <option value="">Sélectionnez une réponse</option>
+                    <option value="regret">Regret</option>
+                    <option value="pas_de_reponse">Pas de réponse</option>
+                    <option value="offre">Offre</option>
+                </select><br/>`;
+            container.appendChild(newDiv);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo_redal2.jpg" alt="Logo Redal">
+            <h1 class="header-title">MAJ Consultation</h1>
+        </div>
+        <form action="/submit-form" method="post">
+            <div class="box">
+                <div class="form-title-box">Element DAD</div>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="dossier">SAISIR N° DOSSIER :</label>
+                    <input type="text" id="dossier" name="dossier" value="001/2024" class="full-width">
+                    <label for="demandeur">Demandeur :</label>
+                    <input type="text" id="demandeur" name="demandeur" class="full-width">
+                    <label for="direction">Direction :</label>
+                    <select id="direction" name="direction" class="full-width">
+                        <option value="DCOM">DCOM</option>
+                        <option value="DEA">DEA</option>
+                        <option value="DEL">DEL</option>
+                        <option value="DET">DET</option>
+                        <option value="DTR">DTR</option>
+                        <option value="DSI">DSI</option>
+                        <option value="DPNT">DPNT</option>
+                        <option value="DJA">DJA</option>
+                        <option value="DAC">DAC</option>
+                        <option value="DAF">DAF</option>
+                        <option value="DG">DG</option>
+                        <option value="D.DEX">D.DEX</option>
+                        <option value="DISI">DISI</option>
+                        <option value="DMS">DMS</option>
+                        <option value="DCM">DCM</option>
+                        <option value="DRH">DRH</option>
+                        <option value="DRI">DRI</option>
+                        <option value="DEX.R">DEX.R</option>
+                        <option value="DEX.S">DEX.S</option>
+                        <option value="DEX.SKT">DEX.SKT</option>
+                    </select>
+                    <label for="date_reception">Date réception de la demande :</label>
+                    <input type="date" id="date_reception" name="date_reception" class="full-width">
+                    <label for="description_projet">Description projet :</label>
+                    <input type="text" id="description_projet" name="description_projet" class="full-width">
+                </div>
+                <div class="form-column">
+                    <label for="financement">Financement :</label>
+                    <select id="financement" name="financement" class="full-width">
+                        <option value="FONDS DE TRAVAUX">FONDS DE TRAVAUX</option>
+                        <option value="FONDS DELEGATAIRE">FONDS DELEGATAIRE</option>
+                        <option value="RENOUVELLEMENT">RENOUVELLEMENT</option>
+                        <option value="TRAVAUX REMBOURSABLES">TRAVAUX REMBOURSABLES</option>
+                        <option value="DEPENSES EXPLOITATION">DEPENSES EXPLOITATION</option>
+                        <option value="FONDS MIXTE">FONDS MIXTE</option>
+                    </select>
+                    <label for="metier">Métier :</label>
+                    <select id="metier" name="metier" class="full-width">
+                        <option value="eau_potable">Eau Potable</option>
+                        <option value="assainissement">Assainissement</option>
+                        <option value="electricite">Électricité</option>
+                        <option value="informatique">Informatique</option>
+                        <option value="commun">Commun</option>
+                        <option value="multi_metier">Multi-métier</option>
+                    </select>
+                    <label for="type_demande">Type demande :</label>
+                    <select id="type_demande" name="type_demande" class="full-width">
+                        <option value="nouvelle_demande">Nouvelle demande</option>
+                        <option value="regularisation">Régularisation</option>
+                        <option value="referencement">Référencement</option>
+                    </select>
+                    <label for="montant_budget">Montant Budget :</label>
+                    <input type="text" id="montant_budget" name="montant_budget" class="full-width">
+                    <label for="montant_estimation">Montant Estimation :</label>
+                    <input type="text" id="montant_estimation" name="montant_estimation" class="full-width">
+                </div>
+            </div>
+            <div class="form-title-box">Éléments Consultation</div>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="date_consultation">Date Consultation:</label>
+                    <input type="date" id="date_consultation" name="date_consultation" class="full-width">
+                    <div id="consulteesContainer">
+                        <label for="entreprises_consultees">Entreprises consultées:</label>
+                       
+                    </div>
+                    <button type="button" class="btn-add" onclick="addEntrepriseConsultee()">Ajouter une entreprise</button>
+                </div>
+                <div class="form-column">
+                    <label for="responsable_jugement">Responsable jugement:</label>
+                    <input type="text" id="responsable_jugement" name="responsable_jugement" class="full-width">
+                    <div id="reponduContainer">
+                        <label for="entreprises_repondu">Entreprises ayant répondu:</label>
+                        
+                    </div>
+                    <button type="button" class="btn-add" onclick="addEntrepriseRepondu()">Ajouter une
+                        réponse</button>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="envoye_jugement">Envoyé pour jugement :</label>
+                        <select id="envoye_jugement" name="envoye_jugement" class="full-width">
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                        <label for="date_envoi_jugement">Date envoi pour jugement :</label>
+                        <input type="date" id="date_envoi_jugement" name="date_envoi_jugement" class="full-width">
+                        <label for="attribution">Attribution à :</label>
+                        <input type="text" id="attribution" name="attribution" class="full-width">
+                        <label for="date_signature_commande">Date signature commande :</label>
+                        <input type="date" id="date_signature_commande" name="date_signature_commande" class="full-width">
+                    </div>
+                    <div class="form-column">
+                        <label for="jugement_retourne">Jugement retourné :</label>
+                        <select id="jugement_retourne" name="jugement_retourne" class="full-width">
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                        <label for="date_retour_jugement">Date retour jugement :</label>
+                        <input type="date" id="date_retour_jugement" name="date_retour_jugement" class="full-width">
+                        <label for="montant_ht">Montant HT :</label>
+                        <input type="text" id="montant_ht" name="montant_ht" class="full-width">
+                        <label for="date_notification">Date notification :</label>
+                        <input type="date" id="date_notification" name="date_notification" class="full-width">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-column full-width">
+                        <label for="etat_dossier">ÉTAT DOSSIER :</label>
+                        <select id="etat_dossier" name="etat_dossier" class="full-width">
+                            <option value="ouvert">OUVERT</option>
+                            <option value="cloture">CLOTURÉ</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="submit" value="Enregistrer" class="full-width">
+            </form>
+        </div>
+    </body>
+    </html>
+    

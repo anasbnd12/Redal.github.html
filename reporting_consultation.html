@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Reporting Consultation</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: no-repeat center center fixed;
+    background-image: url('C:/Users/HPr/Desktop/PFE24V2/rabat-maroc.jpg.1920x0_q85.jpg');
+    background-size: cover; /* Ensure the background covers the entire body */
+  }
+  .container {
+    width: 572px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for readability */
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  .header {
+    color: #000;
+    margin: 0 0 20px 0;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    text-align: center;
+    position: relative;
+  }
+  .header img {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+  }
+  .section {
+    margin-bottom: 20px;
+  }
+  .section label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .section select, .section input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .button-row {
+    text-align: center;
+  }
+  button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <img src="file:///C:/Users/HPr/Desktop/PFE24V2/logo_redal2.jpg" alt="Logo Redal">
+    Reporting Consultation
+  </div>
+
+  <div class="section">
+    <label for="direction">Liste des consultations par Direction :</label>
+    <select id="direction">
+      <option value="DCOM">DCOM</option>
+      <option value="DEA">DEA</option>
+      <option value="DEP">DEP</option>
+      <option value="DET">DET</option>
+      <option value="DTR">DTR</option>
+      <option value="DSI">DSI</option>
+      <option value="DPNT">DPNT</option>
+      <option value="DJA">DJA</option>
+      <option value="DAC">DAC</option>
+      <option value="DEL">DEL</option>
+      <option value="DAF">DAF</option>
+      <option value="DG">DG</option>
+      <option value="D.DEX">D.DEX</option>
+      <option value="DISI">DISI</option>
+      <option value="DMS">DMS</option>
+      <option value="DCM">DCM</option>
+      <option value="DRH">DRH</option>
+      <option value="DRI">DRI</option>
+      <option value="DEX.R">DEX.R</option>
+      <option value="DEX.S">DEX.S</option>
+      <option value="DEX.SKT">DEX.SKT</option>
+    </select>
+  </div>
+
+  <div class="section">
+    <label for="metier">Liste des consultations par Métier :</label>
+    <select id="metier">
+      <option value="Eau Potable">Eau Potable</option>
+      <option value="Assainissement">Assainissement</option>
+      <option value="Electricité">Electricité</option>
+      <option value="Informatique">Informatique</option>
+      <option value="Commun">Commun</option>
+      <option value="Multi-métier">Multi-métier</option>
+    </select>
+  </div>
+
+  <div class="section">
+    <label for="responsable">Liste des consultations par Responsable :</label>
+    <input type="text" id="responsable">
+  </div>
+
+  <div class="section">
+    <label for="entreprise">Liste des attributions par ENTREPRISE :</label>
+    <input type="text" id="entreprise">
+  </div>
+
+  <div class="section">
+    <label for="annee">Liste des consultations par Année :</label>
+    <input type="text" id="annee">
+  </div>
+
+  <div class="section">
+    <label for="lancement">Liste des dossiers en cours de lancement :</label>
+    <input type="text" id="lancement">
+  </div>
+
+  <div class="section">
+    <label for="jugement">Liste des dossiers en cours de jugement :</label>
+    <input type="text" id="jugement">
+  </div>
+
+  <div class="section">
+    <label for="notification">Liste des dossiers en cours de notification :</label>
+    <input type="text" id="notification">
+  </div>
+
+  <div class="section">
+    <label for="regularisation">Liste des dossiers de régularisation :</label>
+    <input type="text" id="regularisation">
+  </div>
+  
+</div>
+
+</body>
+</html>

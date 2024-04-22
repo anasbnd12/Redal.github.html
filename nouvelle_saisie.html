@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvelle Saisie</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: no-repeat center center fixed;
+            background-image: url('C:/Users/HPr/Desktop/PFE24V2/rabat-maroc.jpg.1920x0_q85.jpg');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 750px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            height: 80px;
+        }
+
+        .header-title {
+            color: #333;
+            font-size: 28px;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+
+        .form-title-box {
+            text-align: center;
+            background-color: #000000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .form-column {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .form-column label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .form-column input[type="text"],
+        .form-column input[type="date"],
+        .form-column select,
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="file:///C:/Users/HPr/Desktop/PFE24V2/logo_redal2.jpg" alt="Logo Redal">
+            <div class="header-title">Nouvelle Saisie</div>
+        </div>
+        <div class="form-title-box">Element DAD</div>
+        <form action="/submit-form" method="post">
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="dossier">SAISIR N° DOSSIER :</label>
+                    <input type="text" id="dossier" name="dossier" value="001/2024" class="full-width" readonly>
+                    <label for="demandeur">Demandeur :</label>
+                    <input type="text" id="demandeur" name="demandeur" class="full-width">
+                    <label for="direction">Direction :</label>
+                    <select id="direction" name="direction" class="full-width">
+                        <option value="DCOM">DCOM</option>
+                        <option value="DEA">DEA</option>
+                        <option value="DEL">DEL</option>
+                        <option value="DET">DET</option>
+                        <option value="DTR">DTR</option>
+                        <option value="DSI">DSI</option>
+                        <option value="DPNT">DPNT</option>
+                        <option value="DJA">DJA</option>
+                        <option value="DAC">DAC</option>
+                        <option value="DAF">DAF</option>
+                        <option value="DG">DG</option>
+                        <option value="D.DEX">D.DEX</option>
+                        <option value="DISI">DISI</option>
+                        <option value="DMS">DMS</option>
+                        <option value="DCM">DCM</option>
+                        <option value="DRH">DRH</option>
+                        <option value="DRI">DRI</option>
+                        <option value="DEX.R">DEX.R</option>
+                        <option value="DEX.S">DEX.S</option>
+                        <option value="DEX.SKT">DEX.SKT</option>
+                    </select>
+                    <label for="date_reception">Date réception de la demande :</label>
+                    <input type="date" id="date_reception" name="date_reception" class="full-width">
+                    <label for="description_projet">Description projet :</label>
+                    <input type="text" id="description_projet" name="description_projet" class="full-width">
+                </div>
+                <div class="form-column">
+                    <label for="financement">Financement :</label>
+                    <select id="financement" name="financement" class="full-width">
+                        <option value="FONDS DE TRAVAUX">FONDS DE TRAVAUX</option>
+                        <option value="FONDS DELEGATAIRE">FONDS DELEGATAIRE</option>
+                        <option value="RENOUVELLEMENT">RENOUVELLEMENT</option>
+                        <option value="TRAVAUX REMBOURSABLES">TRAVAUX REMBOURSABLES</option>
+                        <option value="DEPENSES EXPLOITATION">DEPENSES EXPLOITATION</option>
+                        <option value="FONDS MIXTE">FONDS MIXTE</option>
+                    </select>
+                    <label for="metier">Métier :</label>
+                    <select id="metier" name="metier" class="full-width">
+                        <option value="eau_potable">Eau Potable</option>
+                        <option value="assainissement">Assainissement</option>
+                        <option value="electricite">Électricité</option>
+                        <option value="informatique">Informatique</option>
+                        <option value="commun">Commun</option>
+                        <option value="multi_metier">Multi-métier</option>
+                    </select>
+                    <label for="type_demande">Type demande :</label>
+                    <select id="type_demande" name="type_demande" class="full-width">
+                        <option value="nouvelle_demande">Nouvelle demande</option>
+                        <option value="regularisation">Régularisation</option>
+                        <option value="Référencement">Référencement</option>
+                    </select>
+                    <label for="montant_budget">Montant Budget :</label>
+                    <input type="text" id="montant_budget" name="montant_budget" class="full-width">
+                    <label for="montant_estimation">Montant Estimation :</label>
+                    <input type="text" id="montant_estimation" name="montant_estimation" class="full-width">
+                </div>
+            </div>
+            <div class="black-box"></div> <!-- Vous devrez ajouter le style pour cette classe si nécessaire -->
+            <input type="submit" value="Enregistrer" class="full-width">
+        </form>
+    </div>
+</body>
+</html>
